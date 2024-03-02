@@ -25,7 +25,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("/api/home")
+      .get("https://projectmanagement-backend.onrender.com/home")
       .then((response) => {
         setProject(response.data);
       })
