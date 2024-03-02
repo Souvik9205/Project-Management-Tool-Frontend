@@ -41,24 +41,30 @@ const Home = () => {
 
   return (
     <div
-      className="grid grid-cols-3 h-screen"
+      className="grid sm:grid-cols-3 h-screen"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className=" col-span-1 p-4 overflow-hidden">
-        <div className="m-5 mt-3">
-          <h1 className="font-bold text-6xl py-2">Welcome buddy!</h1>
-          <p className="font-semibold text-xl">Here are the projects</p>
+      <div className=" col-span-1 sm:p-4 p-2 pb-0 overflow-hidden">
+        <div className="sm:m-5 ml-6 sm:mt-3">
+          <h1 className="font-bold text-4xl sm:text-6xl py-2">
+            Welcome buddy!
+          </h1>
+          <p className="font-semibold text-xl hidden sm:flex">
+            Here are the projects
+          </p>
         </div>
-        <div className="mr-20 my-5 pr-10">
+        <div className="mr-20 my-5 pr-10 hidden sm:flex">
           <Calendar />
         </div>
-        <div className="m-5 mt-3">
-          <p className="font-semibold text-xl pt-8">you can add project here</p>
-          <div className="flex justify-center mr-20 my-10 pr-10">
+        <div className="sm:m-5 ml-6 sm:mt-3">
+          <p className="sm:font-semibold font-medium text-xl sm:pt-8">
+            you can add project here
+          </p>
+          <div className="flex justify-center mr-20 sm:mb-5 sm:my-10 pr-10 mt-5">
             <button
               type="button"
               class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-14 py-3 text-center me-2 mb-2"
@@ -71,9 +77,9 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="col-span-2 p-4 overflow-auto">
+      <div className="col-span-2 sm:p-4 p-4 py-0 overflow-auto">
         <div>
-          <h1 className="font-bold text-2xl p-10 pl-5">
+          <h1 className="font-bold text-2xl sm:p-10 p-4 pl-5">
             Your Created Projects:
           </h1>
         </div>
@@ -81,7 +87,7 @@ const Home = () => {
           {project.map((project, index) => (
             <div
               key={project._id}
-              className="bg-white shadow-md rounded-lg p-6 mr-10 border mb-3 border-gray-800"
+              className="bg-white shadow-md rounded-lg p-6 sm:mr-10 border mb-3 border-gray-800"
             >
               <div className="flex justify-between">
                 <div>

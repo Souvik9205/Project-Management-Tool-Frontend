@@ -1,15 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import backgroundImage from "./image/land.jpg";
 
 function Landing() {
   return (
-    <div className="flex h-screen">
+    <div
+      className="flex min-h-screen sm:min-w-screen overflow-hidden"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <div className="flex-1 flex items-center justify-center">
         <div className="p-5 ">
-          <h1 className="text-6xl font-bold p-3 font-serif">
+          <h1 className="text-4xl sm:text-6xl font-bold p-3 font-serif">
             Project Management Tool
           </h1>
-          <p className="text-xl p-3 mt-4">
+          <p className="text-sm sm:text-xl p-3 mt-4">
             Welcome to our project management tool, the ultimate solution for
             organizing, collaborating, and tracking your projects effortlessly.
             With our user-friendly interface, you can create projects, add
@@ -48,8 +56,8 @@ function Landing() {
           </div>
         </div>
       </div>
-      <div className="flex-1 flex items-top justify-end">
-        <img src="./landing.png" alt="landing image" className=" p-1.5" />
+      <div className="flex-1 items-top justify-end hidden sm:flex">
+        <img src="./landing.png" alt="landing image" className=" p-1" />
       </div>
     </div>
   );
