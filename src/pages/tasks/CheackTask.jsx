@@ -6,9 +6,11 @@ const CheakTask = () => {
   const navigate = useNavigate();
   const { projectId, taskId } = useParams();
   const [isChecked, setIsChecked] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchTask = async () => {
+      setLoading(true);
       try {
         const response = await axios.get(
           `https://projectmanagement-backend.onrender.com/project/${projectId}/task/${taskId}`
@@ -22,6 +24,7 @@ const CheakTask = () => {
           { checked: toggleChecked }
         );
         console.log("Task status toggled!");
+        setLoading(false);
         navigate(`/project/${projectId}`);
       } catch (error) {
         if (error.response) {
@@ -39,6 +42,15 @@ const CheakTask = () => {
     fetchTask();
   }, [projectId, taskId, navigate]);
 
-  return null;
+  return (
+    <div>
+      {loading && (
+        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white bg-opacity-70 rounded p-4 text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
+          <p className="mt-2">Loading...</p>
+        </div>
+      )}
+    </div>
+  );
 };
 export default CheakTask;

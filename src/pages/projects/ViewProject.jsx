@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import axios from "axios";
-import { FaPen, FaPlus, FaTrash } from "react-icons/fa";
+import { FaPen, FaTrash } from "react-icons/fa";
 import { BsSquare, BsCheckSquare } from "react-icons/bs";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import backgroundImage from "../image/view.jpg";

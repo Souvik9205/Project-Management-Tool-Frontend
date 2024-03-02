@@ -6,8 +6,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Home from "./pages/Home.jsx";
 import Landing from "./pages/Landing.jsx";
-import Signup from "./formats/Signup.jsx";
-import Login from "./formats/Login.jsx";
+import Signup from "./auth/Signup.jsx";
+import Login from "./auth/Login.jsx";
 import CreateProject from "./pages/projects/CreateProject.jsx";
 import UpdateProject from "./pages/projects/UpdateProject.jsx";
 import DeleteProject from "./pages/projects/DeleteProject.jsx";
